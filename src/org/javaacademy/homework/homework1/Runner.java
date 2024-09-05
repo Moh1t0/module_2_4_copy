@@ -32,41 +32,36 @@ public class Runner {
                 -2, -7, -3, -1, -8, -9, -8, -8, -18, -20, -23, -24, -25, -9, -8, -7, -6, -5, -1));
         ArrayList<Integer> february = new ArrayList<>(List.of(-8, -10, -12, -13, -15, -16, -12, -7, -8, -10,
                 -10, -9, -8, -8, -8, -9, -10, -9, -5, -6, -8, -7, -8, -9, -6, -5, -3, -1));
-
-        int sum1 = 0;
-        for (int januarysum : january) {
-            sum1 += januarysum;
-        }
-        int januaryAverageTemperature = sum1 / january.size();
-        System.out.println("Средняя температура за январь : " + januaryAverageTemperature);
-
-        int sum2 = 0;
-        for (int februarysum : february) {
-            sum2 += februarysum;
-        }
-        int februaryAverageTemperature = sum2 / february.size();
-        System.out.println("Средняя температура за ферваль : " + februaryAverageTemperature);
-
-        int amountDay = february.size() + january.size();
-        double averageTemperature = (sum1+sum2) / amountDay;
-        System.out.println("Средняя температура за 2 месяца : " + averageTemperature);
-
-
-        //Задание №3 Ресторанный гуру
-        //Николай Петрович ходит по ресторанам. За 5 дней он был во множестве ресторанов.
-        //Он обратился к вам, чтобы узнать в каком ресторане(ах) он был каждый день
-        // (т.е. найти ресторан(ы) в которых он был и в понедельник, и во вторник, и в среду и тд).
-        ArrayList<String> monday = new ArrayList<>(List.of("Чебуречная №1", "Реберная", "Андерсон", "Ниппон", "Фо бо"));
-        ArrayList<String> tuesday = new ArrayList<>(List.of("Вареничная №1", "Пушкин", "Чебуречная №1", "Ниппон", "Реберная"));
-        ArrayList<String> wednesday = new ArrayList<>(List.of("Реберная", "Арарат", "Майя", "Ниппон", "Таксим"));
-        ArrayList<String> thursday = new ArrayList<>(List.of("Грех", "Ваниль", "Реберная", "Пянсе", "Фо бо"));
-        ArrayList<String> friday = new ArrayList<>(List.of("Бёрдс", "Реберная", "Андерсон", "Ниппон", "Чифанька"));
-
-        monday.retainAll(tuesday);
-        monday.retainAll(wednesday);
-        monday.retainAll(thursday);
-        monday.retainAll(friday);
-        System.out.println("Николай Петрович каждый день посещал ресторан:  " + monday);
+        january.addAll(february);
+        double averageTemperature = averageMonthTemperature(january);
+        System.out.println(averageTemperature);
 
     }
-}
+
+        public static double averageMonthTemperature(ArrayList<Integer> month) {
+            double monthTemperature = 0;
+            for (double monthSum : month){
+                monthTemperature += monthSum;
+            }
+            return monthTemperature / month.size();
+        }
+
+        public static void ex3() {
+            //Задание №3 Ресторанный гуру
+            //Николай Петрович ходит по ресторанам. За 5 дней он был во множестве ресторанов.
+            //Он обратился к вам, чтобы узнать в каком ресторане(ах) он был каждый день
+            // (т.е. найти ресторан(ы) в которых он был и в понедельник, и во вторник, и в среду и тд).
+            ArrayList<String> monday = new ArrayList<>(List.of("Чебуречная №1", "Реберная", "Андерсон", "Ниппон", "Фо бо"));
+            ArrayList<String> tuesday = new ArrayList<>(List.of("Вареничная №1", "Пушкин", "Чебуречная №1", "Ниппон", "Реберная"));
+            ArrayList<String> wednesday = new ArrayList<>(List.of("Реберная", "Арарат", "Майя", "Ниппон", "Таксим"));
+            ArrayList<String> thursday = new ArrayList<>(List.of("Грех", "Ваниль", "Реберная", "Пянсе", "Фо бо"));
+            ArrayList<String> friday = new ArrayList<>(List.of("Бёрдс", "Реберная", "Андерсон", "Ниппон", "Чифанька"));
+
+            monday.retainAll(tuesday);
+            monday.retainAll(wednesday);
+            monday.retainAll(thursday);
+            monday.retainAll(friday);
+            System.out.println("Николай Петрович каждый день посещал ресторан:  " + monday);
+        }
+    }
+
