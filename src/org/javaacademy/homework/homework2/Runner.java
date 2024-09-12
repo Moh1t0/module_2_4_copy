@@ -26,13 +26,12 @@ public class Runner {
                 luggageLine.add(parts[0]);
             }
         }
-        int count = 0;
+        
         while (!luggageLine.isEmpty()) {
             System.out.println("Начинается загрузка на ленту");
             for (int i = 0; i < LUGAGGE_BELT; i++) {
                 String luggage = luggageLine.poll();
-                count++;
-                System.out.println(count + " " + luggage + " -у мен выдан");
+                System.out.println(luggage + " - выдан");
 
             }
             System.out.println("Лента окончена,багаж выдан");
