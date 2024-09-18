@@ -12,6 +12,6 @@ public class Runner {
         Ruler<Animal> animalRuler = animal -> animal.getBodyLength() + animal.getTailLength();
         System.out.println(animalRuler.measure(new Animal(20, 20)));
         Ruler<Boat> boatRuler = boat -> boat.getLength();
-        System.out.println(boatRuler.measure(new Boat(20)));
+        System.out.println(boatRuler.measure(new Boat(29)));
     }
 }
