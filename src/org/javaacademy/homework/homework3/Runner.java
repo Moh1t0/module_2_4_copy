@@ -44,7 +44,7 @@ public class Runner {
         reviews.add(review3);
         reviews.add(review4);
         for (Review review : reviews) {
-            System.out.printf("Отзыв №%d, %s, %d, %s%n",
+            System.out.printf("0тзыв №%d, %s, %d, %s%n",
                     review.getId(),
                     review.getText(),
                     review.getLike(),
