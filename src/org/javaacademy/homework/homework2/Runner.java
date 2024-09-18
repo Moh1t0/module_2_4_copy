@@ -32,7 +32,7 @@ public class Runner {
             for (int i = 0; i < LUGAGGE_BELT; i++) {
                 String luggage = luggageLine.poll();
                 count++;
-                System.out.println(count + " " + luggage + " -у мен выдан");
+                System.out.println(count + " " + luggage + " выдан");
 
             }
             System.out.println("Лента окончена,багаж выдан");
